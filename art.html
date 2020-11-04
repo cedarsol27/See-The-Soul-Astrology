@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="styles/style.css" rel="stylesheet">
+        <link href="styles/tab_gal.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="description" content    ="Art based on feeling">
+        <meta name="keywords" content="art, astrology, creativity, soul, painting, color">
+        <meta name="author" content="James M.A. Pesta">
+        <meta name="viewport" content="width=device-width">
+        <title>Art - See The Soul Astrology</title>
+    </head>
+    <body>
+        <header>
+            <h1>Art</h1>
+            <div w3-include-html="nav-home.html"></div>
+        </header>
+        <main>
+            <p>
+                Here, you can click on the pictures to enlage the image. It has the title associated with the picture at the bottom of the art. You can close the frame by clicking the "X" on the top right corner.
+            </p>
+            <div class="row">
+                <div class="art">
+                    <img src="../images/wind.JPG" alt="Floating on Wind" width="100" height="100" onclick="myFunction(this);">
+                </div>
+                <div class="art">
+                    <img src="../images/birth.jpg" alt="Being birthed" width="100" height="100" onclick="myFunction(this);">
+                </div>
+                <div class="art">
+                    <img src="../images/mascfem.JPG" alt="Masculine and feminine" width="100" height="100" onclick="myFunction(this);">                        
+                </div>
+                <div class="art">
+                    <img src="../images/seered.JPG" alt="Seeing red" width="100" height="100" onclick="myFunction(this);">
+                </div>
+                <div class="art">
+                    <img src="../images/heart.jpg" alt="Broken Open Heart" width="100" height="100" onclick="myFunction(this);">
+                </div>
+            </div>
+
+            <!-- The expanding image container -->
+            <div class="container">
+                <!-- Close the image -->
+                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+                <!-- Expanded image -->
+                <img id="expandedImg" src="images/" alt="" style="width:75%">
+                
+                <!-- Image text -->
+                <div id="imgtext"></div>
+            </div>
+        </main>
+        <footer>
+            <p class="pfoot">&copy; James M. A. Pesta - 2019, designed for BIT112<br>Cascadia College<br>Bothell, WA</p>
+        </footer>
+         <!-- Enable includes -->
+         <script src="/scripts/img.js"></script>
+         <script src="/scripts/includes.js"></script>
+         <script>
+         includeHTML();
+         </script>
+    </body>
+</html>

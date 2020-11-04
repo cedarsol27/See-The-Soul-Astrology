@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!--Page refreshes every four seconds-->
+        <meta http-equiv="refresh" content="4">
+        <!--Mistake in the title-->
+        <title>&lt;title&gt;&lt;/title&gt;</title>
+        <style>
+            main {
+                background: hotpink;
+                height: 200px;
+                border: solid 50px orange;
+                cursor: none;
+            }
+            header {
+                background: green;
+                height: 200px;
+                border: solid 50px;
+                cursor: help;
+                text-align: right;
+            }
+            footer {
+                background: red;
+                cursor: none;
+                border: 40px double magenta;
+                
+            }
+            #div01 {
+                border: solid 25px blue;
+            }
+            section {
+                border: dotted 25px navajowhite;
+                cursor: not-allowed;
+                font-size: 40px;
+                columns: 3;
+                column-width: 13em;
+            }
+            textarea {
+                background: purple;
+                border: dashed 15px gray;
+                cursor: none;
+                text-align: center;
+            }
+            p {
+                color: lime;
+                border: inset 14px paleturquoise;
+                font-size: 26px;
+                text-align: right;
+            }
+            img {
+                border: outset 17px yellow;
+            }
+            label {
+                color: #a20b2e;
+                font-size: 20px;
+            }
+            ul, li {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            li a {
+                display: block;
+                float: right;
+                border: .4em;
+                cursor: none;
+                width: 7.6em;
+                padding: 7em;
+                line-height: 2em;
+                margin-bottom: 2em;
+                border-bottom: 2em;
+            }
+            /* This is designed to move the link far away from the mouse, if one can land the cursor
+            on the link... */
+            li a:hover {
+                border-left: 70em solid hotpink;
+                width: 70.6em;
+            }
+            marquee {
+                color:#a20b2e;
+            }
+            /* Key frames is an animation that changes one CSS style into another */
+            @keyframes blinking {
+                0%{
+                    background-color: #ff3d50;
+                    color: #ddd;
+                }
+                100%{
+                    background-color: #222291;
+                    color: #fff;
+                }
+
+                }
+                html{
+                    font-size: 1.3em;
+                    font-weight: bold;
+                    padding: 10px;
+                    /* Name | Time | Iteration */
+                    animation: blinking .7s infinite;
+                }
+        </style>
+
+    </head>
+    <!--First, a footer should not be at the top, with terrible images, a text box doesn't belong here
+    and a cursor that disappears. Some misspelling is here too, with breaks in the text-->
+    <footer>
+        <p class="pfoot">&copy; James M. A. Pesta</a> - 2019, designed for BIT112<br>Cascadia College<br>Bothell, WA</p>
+             <!--Grumpy cat...-->
+            <img src="images/grump.gif"><img src="images/flash.gif"><label for="msg">Message:</label><br>
+                <textarea id="msg" name="user_message">Type more</textarea>
+                <!--Clearly a marquee which separates in different directions, with text broken up in between-->
+                    <p><marquee direction="up">This is an attempt </marquee> at a really <br> bad html pro<marquee direction="right">ject. I ho<br>pe you get a </marquee>headac<br>he... and have <marquee direction="left">asprin to take care of </marquee>it.</p>
+    </footer>
+    <body>
+        <main>
+            <div>
+                <!--Really, don't stay here long-->
+                WARNING: MAY CAUSE SEIZURES!
+            </div>
+            <ul>
+                <li>
+                    <!--A link that links back to it's self. Bad etiquitte.-->
+                    <a href="bad-html.html">Clic here!</a>
+                </li>
+            </ul>
+            <br>
+            <br>
+            <br>
+            <button onclick="document.getElementById('myImage').src='images/mac.png'">Select Windows</button>
+            <img id="myImage" src="images/mac.png" style="width:100px">
+            <button onclick="document.getElementById('myImage').src='images/windows.png'">Select Mac</button>
+            <br>
+            <div>
+                <!--Another area for contemplation with text that you can't really edit... why is that?-->
+                <label for="msg">Message:</label><br>
+                    <textarea id="msg" name="user_message">Type something</textarea>
+                </div>
+            <section>
+                <marquee direction="down" scrollamount="75">er sumthig go hrer?</marquee>
+                <img src="images/annoy.gif">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <!--Why so many breaks?-->
+            </section>
+        </main>
+        <header>
+            Something is a little backwerds...
+            <div id="div01">meybe this go hrer?</div>
+            <img src="images/makestop.gif">
+            </header>
+            <!--Columns created two layers of gifs-->
+    </body>
+
+</html>

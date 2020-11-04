@@ -1,0 +1,57 @@
+/* Img tab gallery
+////////////////////////////////////////////////////////////////
+*/
+
+  /* Style the images inside the grid */
+  .art img {
+    cursor: pointer;
+    opacity: 1; 
+}
+  
+  .art img:hover {
+    opacity: .5;
+}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+  
+  /* The expanding image container (positioning is needed to position the close button and the text) */
+  .container {
+    position: relative;
+    display: none;
+    margin-left: 1em;
+}
+  
+  /* Expanding image text */
+  #imgtext {
+    bottom: 15px;
+    color: white;
+    font-size: 20px;
+    left: 15px;
+    position: absolute;
+
+}
+  
+  /* Closable button inside the image */
+  .closebtn {
+    color: white;
+    cursor: pointer;
+    font-size: 35px;
+    left: 72%; /* Percent from the left of the image */
+    position: absolute;
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px) {
+    .art, .container {
+        margin-top: 1em;
+    }
+
+    .closebtn {
+        top: -10%;
+        left: 65%;
+    }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="styles/style.css" rel="stylesheet">
+        <meta name="description" content="About James, information about sessions, and other resources that are similar.">
+        <meta name="keywords" content="About, resources, contact">
+        <meta name="author" content="James M.A. Pesta">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>About and Contact - See The Soul Astrology</title>
+        <style>
+
+            #journey {
+                font-size: 1.5em;
+                left: 20px;
+                margin-bottom: 2rem;
+                margin-right: 4rem;
+                padding-bottom: 1rem;
+                position: relative;
+                top: 20px;
+            }
+
+            #aboutColumns p:first-of-type {
+                margin: 0;
+                padding: 0;
+            }
+
+            #aboutColumns {
+                columns: 3;
+                column-gap: 10px;
+                column-width: 150px;
+            }
+
+            #contact {
+                columns: 2;
+                padding-left: 6rem;
+            }
+            #submit {
+                background-color: #b1d4e0;
+                border: none;
+                border-radius: 4px;
+                box-shadow: 2px 2px 2px #145DA0;
+                color: #000;
+                margin: 12px 0 0 ;
+                padding: 8px;
+                text-shadow: 1px 1px 0px #2e8bc0;
+            }
+            @media screen and (min-width: 280px) and (max-width: 800px) {
+                #aboutColumns {
+                    columns: 2;
+                }
+                #contact {
+                    column-count: 1;
+                    padding: 1em;
+                }
+                #msg {
+                    height: 150px;
+                    width: 300px;
+                }
+            }
+            @media screen and (max-width: 280px) {
+                #aboutColumns {
+                    column-count: 1;
+                }
+            }
+        </style>
+    </head>
+    <body>
+    <header>
+       <h1>About</h1>
+       <div w3-include-html="nav-home.html"></div>
+    </header>
+    <main>
+        <h2>Contact Me</h2>
+        <div id="contact">
+            <figure id="imgself">
+                    <img srcset="images/self-260.jpg 260w,
+                    images/self-320.jpg 320w"
+                    
+                    sizes="(max-width: 260px) 240px,
+                    (max-width: 320px) 280px, 340px"
+
+                    src="images/self-320.jpg"
+                    alt="James M.A. Pesta">
+                <figcaption style="text-align:left;">Photo by: &copy;<a href="http://www.element36visuals.com/">Michael Mussman</a></figcaption>
+            </figure>
+
+            <form method="post" action="https://formspree.io/jamesmapesta@gmail.com">
+                <p><label for="first-name">First name:</label>
+                <input type="text" name="customer-first-name" id="first-name" required></p>
+                
+                <p><label for="last-name">Last name:</label>
+                <input type="text" name="customer-last-name" id="last-name"></p>
+                
+                <p><label for="email">E-mail:</label>
+                <input type="email" id="email" name="customer-email" required></p>
+                
+                <p><label for="msg">Message:</label><br>
+                <textarea id="msg" name="user_message"></textarea></p>
+                
+                <input type="submit" value="Submit" id="submit" />
+            </form>
+        </div>
+        <hr>
+        <section id="journey">
+            <h2>The journey</h2>
+            <div id="aboutColumns">
+                <p>
+                    Many of the people I associate with have a dedication to self-growth and spirituality. 
+                    Often times these folks worked in corporate jobs and had no sense of 'awakening'. Their 
+                    stories kind of go like this: they had some sort of crisis in their life, left their 
+                    jobs, and went on some sort of spiritual/healing journey.
+                </p>
+                <p>
+                    My journey is a little of the same, but slightly different. I grew up in a town named 
+                    Arlington, WA. It is a relatively traditional white American environment. In 2009 I 
+                    had my own 'awakening' and moved to Seattle. From there, I went to massage school, and 
+                    by the time I graduated, I was involved in several different spiritual paths and 
+                    healing modalities. These included reiki, plant medicine, shamanism, astrology, tantra, 
+                    and finally a path about humaning.
+                </p>
+                <p>
+                    A few years ago I had a crisis in my life that forced me to leave the massage industry 
+                    and wander for a bit. I am a passionate person, so I wanted to find more of my passion. 
+                    I began to really dive deep into astrology, and found my whole Universe opened up, 
+                    literally. Along side that was a growing cultivation of my mental capabilities, so I 
+                    also decided to embark on a journey to learn programming. Clearly I love language!
+                </p>
+                <p>
+                    I'm not a conventional person. I think and see the world in many different ways compared 
+                    to the mass majority of people. It doesn't make it easy to relate with everyone. But when 
+                    I do find the kinds of people to talk with, we share many amazing insights, teachings, 
+                    and have a very deep heart and soul connection. It's moments like those that I live for.
+                </p>
+                <p>
+                    It is my hopes and intentions that I share a positive impact on the world, encouraging 
+                    people to gain new perspectives, discovering their truth, and living from an open hearted 
+                    place.
+                </p>
+            </div>
+        </section>
+        </main>
+        <footer>
+            <p class="pfoot">&copy; James M. A. Pesta - 2019, designed for BIT112<br>Cascadia College<br>Bothell, WA</p>
+        </footer>
+         <!-- Enable includes -->
+         <script src="/scripts/includes.js"></script>
+         <script>
+         includeHTML();
+         </script>
+    </body>
+</html>
