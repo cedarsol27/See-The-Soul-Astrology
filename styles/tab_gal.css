@@ -1,7 +1,9 @@
 /* Img tab gallery
 ////////////////////////////////////////////////////////////////
 */
-
+  div {
+	  text-align: center;
+  }
   /* Style the images inside the grid */
   .art img {
     cursor: pointer;

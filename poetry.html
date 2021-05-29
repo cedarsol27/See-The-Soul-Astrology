@@ -1,35 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link href="styles/style.css" rel="stylesheet">
-        <link href="styles/poems.css" rel="stylesheet">
-        <meta charset="utf-8">
-        <meta name="description" content="Soul-inspired poetry">
-        <meta name="keywords" content="art, muse, creativity, soul, self-honesty">
-        <meta name="author" content="James M.A. Pesta">
-        <meta name="viewport" content="width=device-width">
-        <title>Poetry - Seed The Soul Astrology</title>
-    </head>
-    <body>
-        <header>
-            <h1>Poetry</h1>
-            <div w3-include-html="nav-home.html"></div>
-        </header>
-        <main>
-            <div class="poems">
-                <div><a href="poems/infinity.html">Infinity</a></div>
-                <div><a href="poems/wild-woman.html">Wild Woman</a></div>
-                <div><a href="poems/price.html">Comes With a Price</a></div>
-                <div><a href="poems/war-never.html">A War That Never Was</a></div>
-            </div>
-        </main>
-        <footer>
-            <p class="pfoot">&copy; James M. A. Pesta - 2019, designed for BIT112<br>Cascadia College<br>Bothell, WA</p>
-        </footer>
-        <!-- Enable includes -->
-        <script src="/scripts/includes.js"></script>
-        <script>
-        includeHTML();
-        </script>
-    </body>
+<head>
+<link href="styles/style.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="description" content="Soul-inspired poetry">
+<meta name="keywords" content="art, muse, creativity, soul, self-honesty">
+<meta name="author" content="James M.A. Pesta">
+<meta name="viewport" content="width=device-width">
+<style>
+    .poems {
+        grid-template-columns: 25em 25em 25em 25em;
+        grid-gap: 20px;
+        gap: 20px;
+        margin-left: 10em;
+    }
+
+    .poems > div {
+        border-radius: 5px;
+        color: #b1d4e0;
+        padding: 10px;
+    }
+
+    .poems a:link {
+        font-size: 16px;
+    }
+
+    .poems a:hover {
+        background: #b1d4e0;
+        padding: .75em 0;
+    }
+
+    @media screen and (min-width: 280px) and (max-width: 600px) {
+        .poems {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 25em;
+            margin: .5em;
+        }
+    }
+</style>
+<title>Poetry - Seed The Soul Astrology</title>
+</head>
+<body>
+    <header>
+        <h1>Poetry</h1>
+        <nav class="navigation">
+            |<a class="homenav" href="../index.html">Home </a>|
+            <a class="homenav" href="../astrology-musings.html">Astrology Musings </a>|
+            <a class="homenav" href="../soul-writings.html">Soul Writings </a>|
+            <a class="homenav" href="../poetry.html">Poetry </a>|
+            <a class="homenav" href="../art.html">Art </a>|
+            <a class="homenav" href="../about-me.html">About Me</a>|
+            <a class="homenav" href="../side-projects.html">Side Projects</a>|
+        </nav>
+    </header>
+    <main>
+        <div class="poems">
+            <p><a href="poems/infinity.html">Infinity</a></p>
+            <p><a href="poems/wild-woman.html">Wild Woman</a></p>
+            <p><a href="poems/price.html">Comes With a Price</a></p>
+            <p><a href="poems/war-never.html">A War That Never Was</a></p>
+        </div>
+    </main>
+    <footer>
+        <p class="pfoot">&copy; James M. A. Pesta - 2019, designed for BIT112<br>Cascadia College<br>Bothell, WA</p>
+    </footer>
+<!-- Enable includes -->
+<script src="/scripts/includes.js"></script>
+<script>
+    includeHTML();
+</script>
+</body>
 </html>

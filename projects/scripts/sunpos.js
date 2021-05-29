@@ -1,11 +1,16 @@
-
+///////////////////////
+//// Stored Arrays ////
+////               ////
+///////////////////////
 
 var date = new Date();
 
-var planet = ["Sun","Moon"];
+var planet = ["Sun","Moon","Mercury","Venus"];
 
 var zodiac = ["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio",
         "Sagittarius","Capricorn","Aquarius","Pisces"];
+
+
 
 var logoPlanet = new Array (10);
     logoPlanet[0] = "<span class='sign'>b</span>";//Sun
@@ -19,122 +24,130 @@ var logoPlanet = new Array (10);
     logoPlanet[8] = "<span class='sign'>j</span>";//Neptune
     logoPlanet[9] = "<span class='sign'>t</span>";//Pluto
 
-var logoSign = new Array (12);
+var logoSign = new Array (13);
     logoSign[0] = "<span class='logo'> ^ </span> ";
     logoSign[1] = "<span class='logo'> _ </span> ";
     logoSign[2] = "<span class='logo'> ` </span> ";
     logoSign[3] = "<span class='logo'> a </span> ";
     logoSign[4] = "<span class='logo'> b </span> ";
-    logoSign[5] = "<span class='logo'> c </span>";
-    logoSign[6] = "<span class='logo'> d </span>";
-    logoSign[7] = "<span class='logo'> e </span>";
-    logoSign[8] = "<span class='logo'> f </span>";
-    logoSign[9] = "<span class='logo'> g </span>";
-    logoSign[10] = "<span class='logo'> h </span>";
-    logoSign[11] = "<span class='logo'> i </span>";
+    logoSign[5] = "<span class='logo'> c </span> ";
+    logoSign[6] = "<span class='logo'> d </span> ";
+    logoSign[7] = "<span class='logo'> e </span> ";
+    logoSign[8] = "<span class='logo'> f </span> ";
+    logoSign[9] = "<span class='logo'> g </span> ";
+    logoSign[10] = "<span class='logo'> h </span> ";
+    logoSign[11] = "<span class='logo'> i </span> ";
+    logoSign[12] = "<br>There is an error...";
+    
+var venusPhase = new Array(13)
+    venusPhase[0] = "Inception";
+    venusPhase[1] = "Gestation";
+    venusPhase[2] = "Birth";
+    venusPhase[3] = "Emergence";
+    venusPhase[4] = "Fullness";
+    venusPhase[5] = "Surrendering & Discovery";
+    venusPhase[6] = "Immersion";
+    venusPhase[7] = "Transmutation";
+    venusPhase[8] = "Rebirth";
+    venusPhase[9] = "Remembering & Embodiment";
+    venusPhase[10] = "Wholeness";
+    venusPhase[11] = "Completion";
+    venusPhase[12] = "Transition";
 
+var pages = new Array (13);
+    pages[0] = "53-60";
+    pages[1] = "61-68";
+    pages[2] = "69-76";
+    pages[3] = "77-84";
+    pages[4] = "85-94";
+    pages[5] = "95-104";
+    pages[6] = "105-116";
+    pages[7] = "117-130";
+    pages[8] = "131-138";
+    pages[9] = "139-148";
+    pages[10] = "149-158";
+    pages[11] = "159-168";
+    pages[12] = "169-178";
 
+var error = "There is an error...";
+///////////////////////////
+//// Sun Sign Function ////
+////                   ////
+///////////////////////////
 
 function writeSun(n) {
     document.getElementById("sun").innerHTML = planet[0]+logoPlanet[0] + " &nbspin " + zodiac[n]+logoSign[n];
+}
+    if((date.getMonth() == 02 && date.getDate() > 20) || 
+    (date.getMonth() == 03 && date.getDate() < 20)) {
+       writeSun(0); //Aries
+    }
+    else if((date.getMonth() == 03 && date.getDate() > 19) || 
+    (date.getMonth() == 04 && date.getDate() < 21)) {
+        writeSun(1); //Taurus
+    }
+    else if((date.getMonth() == 04 && date.getDate() < 20) || 
+    (date.getMonth() == 05 && date.getDate() < 21)) {
+        writeSun(2); //Gemini
+    }
+    else if((date.getMonth() == 05 && date.getDate() > 20) || 
+    (date.getMonth() == 06 && date.getDate() < 23)) {
+        writeSun(3); //Cancer
+    }
+    else if((date.getMonth() == 06 && date.getDate() > 22) || 
+    (date.getMonth() == 07 && date.getDate() < 23)) {
+        writeSun(4); //Leo
+    }
+    else if((date.getMonth() == 07 && date.getDate() < 22) || 
+    (date.getMonth() == 08 && date.getDate() < 23)) {
+        writeSun(5); //Virgo
+    }
+    else if((date.getMonth() == 08 && date.getDate() > 22) || 
+    (date.getMonth() == 09 && date.getDate() < 23)) {
+        writeSun(6); //Libra
+    }
+    else if((date.getMonth() == 09 && date.getDate() > 22) || 
+    (date.getMonth() == 10 && date.getDate() < 22)) {
+        writeSun(7); //Scorpio
+    }
+    else if((date.getMonth() == 10 && date.getDate() < 21) || 
+    (date.getMonth() == 11 && date.getDate() < 22)) {
+        writeSun(8); //Sagittarius
+    }
+    else if((date.getMonth() == 11 && date.getDate() > 21) || 
+    (date.getMonth() == 00 && date.getDate() < 20)) {
+        writeSun(9); //Capricorn
+    }
+    else if((date.getMonth() == 00 && date.getDate() > 20) || 
+    (date.getMonth() == 01 && date.getDate() < 18)) {
+        writeSun(10); //Aquarius
+    }
+    else if((date.getMonth() == 02 && date.getDate() < 19) || 
+    (date.getMonth() == 02 && date.getDate() < 21)) {
+        var holdDegree = 0;
+        writeSun(11); //Pisces
+    }
+    else {
+        writeSun(12); // Only if there's an error
+    }
 
-}
-
-function writeMoon(n) {
-    document.getElementById("moon").innerHTML = planet[1]+logoPlanet[1] + " &nbspin " + zodiac[n]+logoSign[n];
-
-}
-
-// var degrees = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29];
-
-// function degree() {
-//     var signDate = date.getDate();
-//     var startDate = new Date(2020, 2, 19, 20, 49, 0, 0); // restart at month 2
-//     var current = (((startDate - signDate) / 86400000) / 360)/2;
-//     document.getElementById("currentDisp").innerHTML = "Math formula in test: " + current.toFixed(0) + " degrees of " + writeSun(0);   
-// };
-
-// function findDegree() {
-//     var holdDate = date.getDate();
-//     var holdDegree = degrees[29];
-//     var returnDegree = (holdDegree - holdDate);
-//     var currentDegree = holdDate + returnDegree;
-
-//     for(i = 1; i < holdDate; i++) {
-//         holdDegree += 1;
-//         document.getElementById("newVal").innerHTML = "Degrees: " + "<br>Date: " + holdDate
-//         + "<br>Return remaining Degree: " + returnDegree + "<br>Current Position: " + currentDegree;
-//     }
-// }
-
-if((date.getMonth() == 02 && date.getDate() > 20) || 
-(date.getMonth() == 03 && date.getDate() < 20)) {
-    writeSun(0); //Aries
-  //  findDegree();
-}
-else if((date.getMonth() == 03 && date.getDate() > 19) || 
-(date.getMonth() == 04 && date.getDate() < 21)) {
-    writeSun(1); //Taurus
-}
-else if((date.getMonth() == 04 && date.getDate() < 20) || 
-(date.getMonth() == 05 && date.getDate() < 21)) {
-    writeSun(2); //Gemini
-}
-else if((date.getMonth() == 05 && date.getDate() > 20) || 
-(date.getMonth() == 06 && date.getDate() < 23)) {
-    writeSun(3); //Cancer
-}
-else if((date.getMonth() == 06 && date.getDate() > 22) || 
-(date.getMonth() == 07 && date.getDate() < 23)) {
-    writeSun(4); //Leo
-}
-else if((date.getMonth() == 07 && date.getDate() < 22) || 
-(date.getMonth() == 08 && date.getDate() < 23)) {
-    writeSun(5); //Virgo
-}
-else if((date.getMonth() == 08 && date.getDate() > 22) || 
-(date.getMonth() == 09 && date.getDate() < 23)) {
-    writeSun(6); //Libra
-}
-else if((date.getMonth() == 09 && date.getDate() > 22) || 
-(date.getMonth() == 10 && date.getDate() < 22)) {
-    writeSun(7); //Scorpio
-}
-else if((date.getMonth() == 10 && date.getDate() < 21) || 
-(date.getMonth() == 11 && date.getDate() < 22)) {
-    writeSun(8); //Sagittarius
-}
-else if((date.getMonth() == 11 && date.getDate() > 21) || 
-(date.getMonth() == 00 && date.getDate() < 20)) {
-    writeSun(9); //Capricorn
-}
-else if((date.getMonth() == 00 && date.getDate() > 20) || 
-(date.getMonth() == 01 && date.getDate() < 18)) {
-    writeSun(10); //Aquarius
-}
-else if((date.getMonth() == 02 && date.getDate() < 19) || 
-(date.getMonth() == 02 && date.getDate() < 21)) {
-    var holdDegree = 0;
-    writeSun(11); //Pisces
-  //  degree();
-  //  findDegree();
-}
 
 ////////////////////////////////////////////////////////////
 //// This is a Moon date tool for Determining the speed ////
 //// of the revolution around the Earth                 ////
 ////////////////////////////////////////////////////////////
 
-var moonStartDate = new Date(2019, 8, 14, 15, 32, 26, 0); // Sept. 14, 2019 3:32:26 pm Start Date
-var nextMoonDate = new Date(2019, 9, 11, 21, 45, 42, 0) // Oct. 11, 2019, 9:45:42 pm ... One full month for the moon to travel 12 exact signs
+function writeMoon(n) {
+    document.getElementById("moon").innerHTML = planet[1]+logoPlanet[1] + " &nbspin " + zodiac[n]+logoSign[n];
+}
+
+var moonStartDate = new Date(1900, 0, 6, 15, 34, 40, 0); // Jan. 6, 1900 @ 3
+var nextMoonDate = moonStartDate * 1 + (27.32201 * 86400000);
 var moonHold = nextMoonDate - moonStartDate; // One cycle
-var moonCycles = moonHold / 1000 / 3600 / 24; // Convert into days
-var moonMS = (date - moonStartDate) / 1000 / 3600 / 24; // moon calculation for ms
 var currentMoon = (date - moonStartDate)/moonHold; // Current date minus Moon Start and divides into 27 days
 var a = currentMoon%parseInt(currentMoon);
 var b = 1 / 12;
 var c = parseInt(a / b);
-
 
 switch (c)
 {
@@ -174,52 +187,115 @@ switch (c)
     case 11:
         writeMoon(11);
         break;
+    default:
+        error;
 }
 
-
-///////////////////////////////////////////////////////////
-// This is another formula to determine the best outcome //
-///////////////////////////////////////////////////////////
-
-//var otherMoonHold = ((( 27 * 24 + 7 ) * 3600 + 43 ) * 1000); // Via the internet
-//var otherMoonCycle = otherMoonHold / 1000 / 3600 / 24
-//var otherCurrentMoon = (date - moonStartDate)/otherMoonHold;
-
-//var x = otherCurrentMoon%parseInt(otherCurrentMoon);
-//var z = x / y;
-
-
-
-////////////////////////////////////////////////////////////////
-//// || In theory, this should be the only place to edit || ////
-//// VV                                                  VV ////
-////////////////////////////////////////////////////////////////
-
-
-
-
-document.getElementById("date").innerHTML = moonMS.toFixed(6) + " days since Moon start date of Sept. 14, 2019 @ 3:33pm.<br>" 
-+ moonCycles.toFixed(6) + " days per cycle.<br>" + currentMoon.toFixed(6) + " full revolutions of the moon.<br>" 
-//+ otherMoonCycle + " new variable.";
-
-
-
-//document.getElementById("math").innerHTML = b + " variable for internet data<br>" + z +" variable for app data";
-
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-//// This is Venus Synodic cycle... /////////////////////////////////////
-////                                /////////////////////////////////////
+////////////////////////////////////////
+////////////////////////////////////////
+//// This is Venus Synodic cycle... ////
+////                                ////
 ////////////////////////////////////////
 
-var venusStartDate = new Date(2017, 2, 25, 10, 17, 0, 0)
-var nextVenusDate = new Date(2018, 9, 26, 14, 16, 0, 0);
-var venusHold = nextVenusDate - venusStartDate;
-var venusCycles = venusHold / 1000 / 3600 / 24;
-var currentVenus = (date - venusStartDate)/venusHold;
+function writeVenus(n) {
+    document.getElementById("venus").innerHTML = planet[3]+logoPlanet[3] + " &nbspin " + zodiac[n]+logoSign[n];
+}
+var venusCycle001 = new Date(2020, 05, 03, 17, 44, 0, 0);
+var venusCycle002 = new Date(2022, 00, 09, 00, 48, 0, 0);
+var venusLength = venusCycle002 - venusCycle001;
+
+
+var Inception = 172800000; // 2 days
+var Gestation = 388800000; // 4.5 days
+var Birth = 172800000; // 2 days
+var Emergence = 1123200000; // 13 days
+var Fullness = 4406400000; // 51 days
+var Surrendering = 14688000000; // 170 days
+var Immersion = 4320000000; // 50 days
+var Transmutation = 4060800000; // 47 days
+var Rebirth = 691200000; // 8 days
+var Remembering = 14083200000; // 163 days
+var Wholeness = 4320000000; // 50 days
+var Completion = 1296000000; // 15 days
+var Transition = 518400000; // 6 days
+var sum = Inception + Gestation + Birth + Emergence + Fullness + Surrendering + Immersion + Transmutation + Rebirth +Remembering + Wholeness + Completion + Transition;
+document.getElementById("disp2").innerHTML =((venusLength - sum)/100/60/60/24) + " days remaining.";
+
+function venusPhaseFunction(n) {
+    document.getElementById("disp").innerHTML = "The current Venus" + logoPlanet[3] + " phase is " + venusPhase[n] + ".<br>"
+    + "For more information, refer to pages " + pages[n] + " in the book <i>The Light of Venus</i> by Adam Gainsburg.";
+}
+
+    var a = venusCycle001 + Inception;
+    var b = a + Gestation;
+    var c = b + Birth;
+    var d = c + Emergence;
+    var e = d + Fullness;
+    var f = e + Surrendering;
+    var g = f + Immersion;
+    var h = g + Transmutation;
+    var i = h + Rebirth;
+    var j = i + Remembering;
+    var k = j + Wholeness;
+    var l = k + Completion
+
+    if( date <= (venusCycle001 + Inception) ){
+        venusPhaseFunction(0);
+    }
+    
+    else if( date > a && date <= b ){
+        venusPhaseFunction(1);
+    }
+
+    else if( date > b && date <= c ){
+        venusPhaseFunction(2);
+    }
+
+    else if( date > c && date <= d ){
+        venusPhaseFunction(3);
+    }
+
+    else if( date > d && date <= (d + Fullness) ){
+        venusPhaseFunction(4);
+    }
+
+    else if( date > e && date <= (e + Surrendering) ){
+        venusPhaseFunction(5);
+    }
+
+    else if( date > f && date <= (f + Immersion) ){
+        venusPhaseFunction(6);
+    }
+
+    else if( date > g && date <= (g + Transmutation) ){
+        venusPhaseFunction(7);
+    }
+
+    else if( date > h && date <= (h + Rebirth) ){
+        venusPhaseFunction(8);
+    }
+
+    else if( date > i && date <= (i + Remembering) ){
+        venusPhaseFunction(9);
+    }
+
+    else if( date > j && date <= (j + Wholeness) ){
+        venusPhaseFunction(10);
+    }
+
+    else if( date > k && date <= (k + Completion) ){
+        venusPhaseFunction(11);
+    }
+
+    else if( date > l && date < venusCycle002){
+        venusPhaseFunction(12);
+    }
+    else {
+        document.getElementById("disp").innerHTML = error;
+    }
+
+////////////////////
+//// Mars Phase ////
+////            ////
+////////////////////
 

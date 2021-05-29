@@ -1,4 +1,51 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 /* Font Face
 ////////////////////////////////////////////////////////////
@@ -19,23 +66,26 @@
 */
 
 html {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Font family for safe web browsing so that users who do not have that font installed can load font from another value*/
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
     font-size: 10px; /* This makes all of the text in main be a certain font size */
+    width: 1040px;
+    margin: 0 auto;
 }
 
 body {
     border-color: #2e8bc0;
     border-left-style: solid; /* This borders the entire left side of the page */
     border-right-style: solid; /* This borders the entire right side of the page */
-    margin: 1rem; /* Putting pages alongside the edge of browser */
-
+    margin: 0; /* Putting pages alongside the edge of browser */
 }
 
 header {
     background-color: #0c2d48; /* BGcolor of header only */
     border-color: #2e8bc0;
     color: #ffffff; /* All of the text in the header color */
-    padding-top: 2rem; /* This is the amount of space from the text to the border */
+    padding-top: 0; /* This is the amount of space from the text to the border */
+    padding-bottom: 0;
+    margin-bottom: 0;
 }   
 
 header, main, footer {
@@ -52,7 +102,8 @@ main {
     border-color: #2e8bc0;
     color: #B1D4E0; 
     min-height: 960px;
-    padding-top: 1rem; /* Padding for the top of the main and line of text */
+    padding-top: 0; /* Padding for the top of the main and line of text */
+    margin-top: 0;
 }
 
 footer { 
@@ -82,10 +133,13 @@ footer {
     line-height: 4rem; /* Creates the spacing for the text and top/bottom margin */
     margin: 0 .3em 0 .3em; /* Spacing inbetween the buttons */
     padding: .3em; /* Spacing in between links */
+    text-shadow: 2px 0px 5px #000, -2px 0 5px #0c2d48;
+    text-decoration: none;
+    
 }
 
 .navigation a:hover { /*This Section helps to make the nav bar pop out with a color on the left */
-    border-left: .3em solid tomato;
+    border-left: .3em;
     margin: .225em; /* Notice the specific measurement */
     padding: .225em;
 }
@@ -97,7 +151,6 @@ footer {
     color: #fff;
     overflow: hidden; /* There was a border that overlapped the header. This removed the overflow of that border*/
     text-align: center; /* Centers the buttons for nav */
-
 }   
 
 /* Headings
@@ -106,15 +159,16 @@ footer {
 
 h1 {
     color: #B1D4E0;
-    font-family: fantasy, impact;
-    font-size: 2.6rem;
+    font-size: 40px;
     line-height: 3rem; /* Line height of the text in h1 */
+    padding-top:20px;
+    padding-bottom: 20px;
     text-align: center;
+    text-shadow: 8px 0px 30px #999;
 }
 
 h2 {
     color: #b1d4e0;
-    font-family: fantasy;
     font-size: 2.6rem;
     line-height: 2;
     margin: 1rem;
@@ -157,6 +211,8 @@ section, div {
     line-height: 2rem; /*Spacing for text*/
     max-width: 100%; /* For now this works for fitting in the text to the BG*/
     text-align: justify; /*Aligns text to fit to same margins as all other text, like a newspaper*/
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .section { /* Another class tag for the blog */
@@ -227,6 +283,10 @@ article {
     padding-right: 1em;
 }
 
+div {
+    margin: 0;
+    padding: 0;
+}
 /* Aside
 /////////////////////////////////////////////////////////////
 */
@@ -305,7 +365,7 @@ th {
 
 p, li {
     color: #b1d4e0; /* Needed for blog to show color */
-    font-size: 20px;
+    font-size: 18px;
 }
 
 p {
@@ -410,8 +470,7 @@ a:visited { /* When the link has already been clicked */
     color: #ffffff;
 }
 
-a:hover { /* When hovering over the link, Make sure to reverse the color */
-    background-color: #B1D4E0; 
+a:hover { 
     color: #0c2d48; 
     text-decoration: none;
 }
@@ -425,9 +484,8 @@ a .art:hover {
     width: 150px;
 }
 
-.navigation a:hover { /* This is extra because of the other edits I did for the color of text in the nav bar */
+.navigation a:hover { /* Color of text in the nav bar */
     color: #0c2d48;
-    width: 2em;
 }
 
 a:active { 
@@ -498,14 +556,3 @@ textarea {
 /* Scripting Elements
 /////////////////////////////////////////////////////////////
 */
-
-button {
-    background: #b1d4e0;
-    border-color: tomato;
-    border-radius: 10px;;
-    color: #0c2d48;
-    font-size: 20px;
-    height: 2em;
-    margin-left: 9em;
-    width: 6em;
-}
